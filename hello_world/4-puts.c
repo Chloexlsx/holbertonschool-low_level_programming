@@ -1,6 +1,6 @@
-#include <studio.h>
+#include <stdio.h>
 #include <string.h>
-/*
+/**
  * main - the entry point prints message using put
  *
  * Return: always 0 (Success)
