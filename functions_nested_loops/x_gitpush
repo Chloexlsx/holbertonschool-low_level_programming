@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# This script takes a single argument in the form <number>-<text>
+# Example: ./git_task.sh 2-hello
+# It will run:
+#   git add 2-hello
+#   git commit -m "task_2"
+#   git push
+
+set -euo pipefail
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <number>-<text>"
+  exit 1
+fi
+
+arg="$1"
+
+# Extract the number before the hyphen
+number="${arg%%-*}"
+
+# Perform the git commands
+git add "$arg"
+git commit -m "task_${number}"
+git push
