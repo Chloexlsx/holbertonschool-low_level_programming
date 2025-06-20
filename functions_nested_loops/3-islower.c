@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * int _islower(int c) - checks if the int passes in the function is lowercaer;
+ * function int  _islower() - checks if the int c passes in the function is lowercaer;
  *
  * Return: 1 if yes, otherwise 0 will be returned
  *
