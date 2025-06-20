@@ -39,8 +39,6 @@ for (j = 0; j < 3; j++)
 					_putchar(':');
 					_putchar(k + '0');
 					_putchar(l + '0');
-					if (i == 3 && k == 5 && l == 9)
-						return;
 					_putchar('\n');
 				}
 			}
