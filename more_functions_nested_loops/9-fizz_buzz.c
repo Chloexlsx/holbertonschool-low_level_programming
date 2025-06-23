@@ -6,7 +6,7 @@
  *			 follow by a newline
  *
  *
- * Return: void
+ * Return: FizzBuss and numbers
  */
 int main(void)
 {
@@ -35,4 +35,5 @@ int main(void)
 			putchar(' ');
 	}
 	putchar('\n');
+	return (0);
 }
