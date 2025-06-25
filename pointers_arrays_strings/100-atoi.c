@@ -14,14 +14,12 @@ int _atoi(char *s)
 	int sign = 1;
 	int result = 0;
 
-	while (s[i] && s[i] != '+' && s[i] != '-' && (s[i] < '0' || s[i] > '9'))
-	{
-		i++;
-	}
-	while (s[i] == '+' || s[i] == '-')
+	while (s[i] != '\0')
 	{
 		if (s[i] == '-')
 			sign = -sign;
+		else if (s[i] >= '0' && s[i] <= '9')
+			break;
 		i++;
 	}
 	while (s[i] >= '0' && s[i] <= '9')
