@@ -1,16 +1,14 @@
 #include "main.h"
 #include <stddef.h>
 
-/**
- * *_strstr - locates a substring.
- * @haystack: the string
- * @needle: the substring to match
- * str_in_str - this is a function comparing two strings
- * @s: first string
- * @f: second string
- * Return: an char pointer
- */
 
+/**
+ * str_in_str - helper to check if string f matches the start of s
+ * @s: the string in which to look
+ * @f: the substring to compare
+ *
+ * Return: 1 if the first strlen(f) bytes of s equal f, 0 otherwise
+ */
 static int str_in_str(char *s, char *f)
 {
 	int i;
@@ -26,6 +24,14 @@ static int str_in_str(char *s, char *f)
 	return (1);
 }
 
+
+/**
+ * _strstr - locates a substring.
+ * @haystack: the string
+ * @needle: the substring to match
+ *
+ * Return: an char pointer
+ */
 char *_strstr(char *haystack, char *needle)
 {
 	int i;
