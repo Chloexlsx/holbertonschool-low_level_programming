@@ -1,6 +1,24 @@
 #include "main.h"
 
 /**
+ * sqrt_helper - recursively tries successive integers to find root of n
+ * @n: the target number
+ * @i: the current number try to find i * i == n
+ *
+ * Return: i if found it;
+ *		-1 if i * i is already pass n, so not found
+ *		otherwise recurse with i + 1
+ */
+static int sqrt_helper(int n, int i)
+{
+	if (i * i == n)
+		return (i);
+	if (i * i > n)
+		return (-1);
+	return (sqrt_helper(n, i + 1));
+}
+
+/**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: the number
  *
@@ -8,16 +26,7 @@
  */
 int _sqrt_recursion(int n)
 {
-	int inner(int target, int i)
-	{
-		if (i * i == target)
-			return (i);
-		if (i * i > target)
-			return (-1);
-		return (inner(target, i + 1));
-	}
-
 	if (n < 0)
 		return (-1);
-	return (inner(n, 0));
+	return (sqrt_helper(n, 0));
 }
