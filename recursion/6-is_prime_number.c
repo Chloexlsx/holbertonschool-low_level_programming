@@ -20,7 +20,7 @@ int prime_helper(int n, int i)
  * is_prime_number - checks if a number is a prime number
  *	using trial division - if n is a multiple of any integer
  *	between 2 and sqrt root of n
- * @n the number to test
+ * @n: the number to test
  *
  * Return: 1 is true, 0 if false
  */
