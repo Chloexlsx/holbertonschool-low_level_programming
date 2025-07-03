@@ -24,7 +24,7 @@ static int sqrt_helper(int n, int i)
  *
  * Return: an integer
  */
-int _sqrt_recursion(int n);
+int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
