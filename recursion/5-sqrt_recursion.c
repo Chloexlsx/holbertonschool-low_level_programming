@@ -9,7 +9,7 @@
  *		-1 if i * i is already pass n, so not found
  *		otherwise recurse with i + 1
  */
-static int sqrt_helper(int n, int i)
+int sqrt_helper(int n, int i)
 {
 	if (i * i == n)
 		return (i);
