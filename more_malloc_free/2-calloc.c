@@ -30,7 +30,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	/*initialise each item to 0*/
 	/* in C you cannot do pointer arithmetic or indexing on a void* */
 	/*, so we need int *p*/
-	p = (unsigned char)new_str;
+	p = (unsigned char *)new_str;
 	for (i = 0; i < (nmemb * size); i++)
 		p[i] = 0;
 	return (new_str);
