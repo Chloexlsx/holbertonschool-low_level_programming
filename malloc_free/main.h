@@ -29,4 +29,5 @@ char *_strstr(char *haystack, char *needle);
 void print_chessboard(char (*a)[8]);
 char *create_array(unsigned int size, char c);
 char *_strdup(char *str);
+char *str_concat(char *s1, char *s2);
 #endif
