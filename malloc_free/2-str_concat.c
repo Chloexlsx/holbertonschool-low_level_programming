@@ -3,13 +3,13 @@
 #include <stdlib.h>
 
 /**
- * _str_concat - concatenate two strings
+ * str_concat - concatenate two strings
  * @s1: the 1st string to concatenate
  * @s2: the second string to concate
  *
  * Return: a pointer to the new array or NULL
  */
-char *_str_concat(char *s1, char *s2)
+char *str_concat(char *s1, char *s2)
 {
 	/*create a pointer to the new array*/
 	char *new_cnc;
