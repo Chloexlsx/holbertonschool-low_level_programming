@@ -28,21 +28,23 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len++;
 	while (s2[len2] != '\0')
 		len2++;
+	/*handle n >= len2 situation*/
+	if (n >= len2)
+		copy_len = len2;
+	else
+		copy_len = n;
+
 	/*allocates memory using malloc*/
-	new_str = malloc((len + n + 1) * sizeof(char));
+	new_str = malloc((len + copy_len + 1) * sizeof(char));
 	/*if malloc fails, terminate with 98*/
 	if (new_str == NULL)
 		return (NULL);
 	/*concatenate s1 & s2, if n >= len2*/
 	for (i = 0; i < len; i++)
 		new_str[i] = s1[i];
-	if (n >= len2)
-		copy_len = len2;
-	copy_len = n;
-
 	for (j = 0; j < copy_len; j++)
 		new_str[i + j] = s2[j];
-	new_str[i + j + 1] = '\0';
+	new_str[i + j] = '\0';
 
 	return (new_str);
 }
