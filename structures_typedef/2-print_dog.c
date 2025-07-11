@@ -16,7 +16,7 @@ void print_dog(struct dog *d)
 	else
 		printf("Name: %s\n", d->name);
 	/*float will always valid, not NULL, so no if here*/
-	printf("Age: %.2f\n", d->age);
+	printf("Age: %f\n", d->age);
 	if (d->owner == NULL)
 		printf("Owner: (nil)\n");
 	else
