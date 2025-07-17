@@ -40,10 +40,9 @@ void print_all(const char * const format, ...)
 						break;
 					case 's':
 						current_str = va_arg(args, char*);
-						if (current_str)
-							printf("%s", current_str);
 						if (!current_str)
-							printf("(nil)");
+							current_str = "(nil)";
+						printf("%s", current_str);
 						break;
 				}
 				separator = ", ";
