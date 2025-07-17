@@ -35,7 +35,7 @@ void print_all(const char * const format, ...)
 					printf("%f", va_arg(args, double));
 				if (format[i] == 's')
 				{
-					current_str = va_arg(args, *char);
+					current_str = va_arg(args, char*);
 					if (current_str)
 						printf("%s", current_str);
 					else
