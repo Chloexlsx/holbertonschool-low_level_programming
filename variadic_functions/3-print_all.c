@@ -38,7 +38,7 @@ void print_all(const char * const format, ...)
 					current_str = va_arg(args, char*);
 					if (current_str)
 						printf("%s", current_str);
-					else
+					if (!current_str)
 						printf("(nil)");
 				}
 				separator = ", ";
