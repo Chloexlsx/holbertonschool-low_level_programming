@@ -1,4 +1,6 @@
 #include "lists.h"
+
+
 /**
  * print_num - convert integer into char and print it recursively
  * @n: string length from print_liset
@@ -26,6 +28,7 @@ void print_num(unsigned int n)
 void print_str(char *s)
 {
 	int len = 0;
+	int i;
 
 	while (s[len] != '\0')
 	{
@@ -46,7 +49,6 @@ void print_str(char *s)
 size_t print_list(const list_t *i)
 {
 	int cnt_node = 0;
-	char *new_str;
 
 	while (i != NULL)
 	{
