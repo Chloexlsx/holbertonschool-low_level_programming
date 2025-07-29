@@ -56,12 +56,13 @@ size_t print_list(const list_t *i)
 		print_num(i->len);
 		_putchar(']');
 		_putchar(' ');
-		if (i->str)
+		if (i->str == NULL)
 		{
 			print_str("(nil)");
 		}
 		else
 			print_str(i->str);
+		_putchar('\n');
 		/*i stores address of current node, next stores address of next node, i->next can get the address of next node, i = i->next is to change the address of current node into the address of the next node*/
 		i = i->next;
 		cnt_node++;
