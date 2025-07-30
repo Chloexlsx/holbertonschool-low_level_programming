@@ -27,32 +27,32 @@ dlistint_t *new_node(int t)
  * @n: an integer
  * Return: address of the new node
  */
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+dlistint_t *add_dnodeint(dlistint_t **headptr, const int n)
 {
-	dlistint_t *node;
+	dlistint_t *new_node_ptr;
 
-	node = malloc(sizeof(dlistint_t));
-	if (node == NULL)
-	{
+	/*make a new node*/
+	new_node_ptr = new_node(n);
+	if (new_node_ptr == NULL)
 		return (NULL);
-	}
-
-	node->n = n;
-
-	if (*head == NULL)
+	/*assign a new node to the head if the pointer to the head is NULL*/
+	if (*headptr == NULL)
 	{
-		node->next = NULL;
-		node->prev = NULL;
-		*head = node;
+		*headptr = new_node_ptr;
+		return (new_node_ptr);
 	}
-	else
-	{
-		node->next = *head;
-		(*head)->prev = node;
-		*head = node;
-	}
+	/*start to add a new node in the beginning of the list*/
+	(*headptr)->prev = new_node_ptr;
+	new_node_ptr->next = *headptr;
 
-	return (node);
-
-
+	/**
+	* for line *headptr = new_node_ptr; I used head = new_node_ptr; initially,
+	*	however, it does not work, it will not change the actual head
+	*	value in main(). Only thru headptr, because when the function
+	*	is called, the actual head in the main can only be accessed
+	*	using headptr. Changing the value of head I declare
+	*	in add_dnoteint will not change the head in main.
+	*/
+	*headptr = new_node_ptr;
+	return (new_node_ptr);
 }
