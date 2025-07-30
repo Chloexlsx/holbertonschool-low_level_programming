@@ -1,12 +1,13 @@
 #include "lists.h"
 
 /**
- * print_list - prints all the elements of a list_t list
- * @i: the pointer points to the list_t
+ * print_len - prints all the elements of a list_t list
+ * @i: the pointer points to the list_t, it does not have to be h like the holberton page,
+ *	 it can even be left blank
  *
  * Return: number of nodes
  */
-size_t print_list(const list_t *i)
+size_t list_len(const list_t *i)
 {
 	int cnt_node = 0;
 
