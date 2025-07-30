@@ -56,14 +56,15 @@ list_t *add_node_end(list_t **headptr, const char *str)
 	if (*headptr == NULL)
 		*headptr = new_node_ptr;
 	else
+	{
 		temp = *headptr;
 
-	/*temp walk to the last node in the list*/
-	while (temp->next != NULL)
-	{
-		temp = temp->next;
+		/*temp walk to the last node in the list*/
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+		temp->next = new_node_ptr;
 	}
-	temp->next = new_node_ptr;
-
 	return (new_node_ptr);
 }
