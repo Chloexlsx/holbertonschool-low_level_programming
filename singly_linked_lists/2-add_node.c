@@ -14,7 +14,10 @@ list_t *new_node(const char *s)
 	list_t *ptr;
 	int i;
 
+	/*malloc wil return the address of the memory allocated*/
 	ptr = malloc(sizeof(list_t));
+	if (ptr == NULL)
+		return (NULL);
 	ptr->str = strdup(s);
 	ptr->next = NULL;
 
@@ -46,6 +49,8 @@ list_t *add_node(list_t **headptr, const char *str)
 	*	as it expects a pointer as argument
 	*/
 	new_node_ptr = new_node(str);
+	if (new_node_ptr == NULL)
+		return (NULL);
 	/**
 	*	use headptr to access the value store in head
 	*	which is the address of the 1st node.
