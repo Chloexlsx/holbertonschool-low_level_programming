@@ -37,26 +37,27 @@ list_t *new_node(const char *s)
 list_t *add_node_end(list_t **headptr, const char *str)
 {
 	list_t *new_node_ptr;
-	/**
-	*	usually, we use the pointer to 1st node
-	*	which is a variable called head(type = list_t*)
-	*	but there is no head. So, we use *headptr (= head)
-	*	to assigen temp
-	*/
-	list_t *temp = *headptr;
+	list_t *temp;
 
 	/**
-	*	pass the pointer str to make_node(),
+	*	pass the pointer str to new_node(),
 	*	as it expects a pointer as argument
 	*/
 	new_node_ptr = new_node(str);
 	if (new_node_ptr == NULL)
 		return (NULL);
+
 	/**
-	*	use headptr to access the value store in head
-	*	which is the address of the 1st node.
-	*	Then, assigned that value to the address of the new_node
+	*	usually, we use the pointer to 1st node
+	*	which is a variable called head (type = list_t*)
+	*	but there is no head. So, we use *headptr (= head)
+	*	to assigen temp.
 	*/
+	if (*headptr == NULL)
+		*headptr = new_node_ptr;
+	else
+		temp = *headptr;
+
 	/*temp walk to the last node in the list*/
 	while (temp->next != NULL)
 	{
