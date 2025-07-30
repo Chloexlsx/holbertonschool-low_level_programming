@@ -21,7 +21,8 @@ list_t *new_node(const char *s)
 	ptr->str = strdup(s);
 	ptr->next = NULL;
 
-	for (i = 0; s[i] != '\0'; i++);
+	for (i = 0; s[i] != '\0'; i++)
+		;
 	ptr->len = i;
 	return (ptr);
 }
