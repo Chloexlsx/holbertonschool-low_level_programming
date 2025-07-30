@@ -30,6 +30,7 @@ dlistint_t *new_node(int t)
 dlistint_t *add_dnodeint(dlistint_t **headptr, const int n)
 {
 	dlistint_t *new_node_ptr;
+	dlistint_t *head;
 
 	/*make a new node*/
 	new_node_ptr = new_node(n);
@@ -42,8 +43,9 @@ dlistint_t *add_dnodeint(dlistint_t **headptr, const int n)
 		return (new_node_ptr);
 	}
 	/*start to add a new node in the beginning of the list*/
-	(*headptr)->prev = new_node_ptr;
-	new_node_ptr->next = *headptr;
+	head = *headptr;
+	head->prev = new_node_ptr;
+	new_node_ptr->next = head;
 
 	/**
 	* for line *headptr = new_node_ptr; I used head = new_node_ptr; initially,
