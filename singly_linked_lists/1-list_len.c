@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_len - prints all the elements of a list_t list
+ * list_len - prints all the elements of a list_t list
  * @i: the pointer points to the list_t,
  *	it does not have to be h like in the holberton page,
  *	it can even be left blank
