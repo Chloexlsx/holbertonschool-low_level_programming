@@ -65,13 +65,8 @@ dlistint_t **headptr, unsigned int idx, int n)
 	dlistint_t *new_node = NULL, *temp = *headptr, *b4 = NULL;
 	unsigned int i;
 
-	if (*headptr == NULL && idx != 0)
-		return (NULL);
-	if (*headptr == NULL && idx == 0)
-	{
-		new_node = add_dnodeint(headptr, n);
-		return (new_node);
-	}
+	if (*headptr == NULL)
+		return (idx != 0 ? NULL : add_dnodeint(headptr, n));
 	for (i = 0; temp != NULL; i++)
 	{
 		if (idx == i)
@@ -82,12 +77,10 @@ dlistint_t **headptr, unsigned int idx, int n)
 				return (new_node);
 			}
 			/*last*/
-			/**else if (temp->next == NULL)
-			*{
+			/**else if (temp->next == NULL){
 			*	new_node = add_dnodeint_end(headptr, n);
 			*	return (new_node);
-			*}
-			*/
+			*} */
 			else
 			{	/*make a new node first*/
 				new_node = get_new_node(n);
@@ -101,11 +94,6 @@ dlistint_t **headptr, unsigned int idx, int n)
 		temp = temp->next;
 	}
 	if (idx == i)
-	{
-		new_node = add_dnodeint_end(headptr, n);
-		return (new_node);
-	}
-	if (idx > i)
-		return (NULL);
+		return (add_dnodeint_end(headptr, n));
 	return (NULL);
 }
