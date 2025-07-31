@@ -42,7 +42,6 @@ dlistint_t *add_dnodeint(dlistint_t **headptr, const int n)
 		return (new_node_ptr);
 	}
 	/*start to add a new node in the beginning of the list*/
-	head = *headptr;
 	(*headptr)->prev = new_node_ptr;
 	new_node_ptr->next = *headptr;
 
