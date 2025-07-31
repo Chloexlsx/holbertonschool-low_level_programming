@@ -77,10 +77,12 @@ dlistint_t **headptr, unsigned int idx, int n)
 				return (new_node);
 			}
 			/*last*/
-			/**else if (temp->next == NULL){
+			/**
+			*else if (temp->next == NULL){
 			*	new_node = add_dnodeint_end(headptr, n);
 			*	return (new_node);
-			*} */
+			*}
+			*/
 			else
 			{	/*make a new node first*/
 				new_node = get_new_node(n);
