@@ -67,6 +67,11 @@ dlistint_t **headptr, unsigned int idx, int n)
 
 	if (*headptr == NULL && idx != 0)
 		return (NULL);
+	if (*headptr == NULL && idx == 0)
+	{
+		new_node = add_dnodeint(headptr, n);
+		return (new_node);
+	}
 	for (i = 0; temp != NULL; i++)
 	{
 		if (idx == i)
