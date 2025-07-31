@@ -8,7 +8,7 @@
  *
  * Return: the pointer to the new node
  */
-dlistint_t *new_node(int t)
+static dlistint_t *new_node(int t)
 {
 	dlistint_t *ptr;
 
