@@ -22,7 +22,7 @@ dlistint_t *new_node(int t)
 }
 
 /**
- * dlistint_t *add_dnodeint- add a new node in the beginning of a dlinklist
+ * dlistint_t *add_dnodeint_end- add a new node in the beginning of a dlinklist
  * @headptr: the iterator pointer points to a dlistint_t
  * @n: an integer
  * Return: address of the new node
