@@ -44,8 +44,8 @@ dlistint_t *add_dnodeint(dlistint_t **headptr, const int n)
 	}
 	/*start to add a new node in the beginning of the list*/
 	head = *headptr;
-	head->prev = new_node_ptr;
-	new_node_ptr->next = head;
+	(*headptr)->prev = new_node_ptr;
+	new_node_ptr->next = *headptr;
 
 	/**
 	* for line *headptr = new_node_ptr; I used head = new_node_ptr; initially,
