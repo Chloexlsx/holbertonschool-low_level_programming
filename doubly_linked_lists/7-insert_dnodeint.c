@@ -99,7 +99,7 @@ dlistint_t **headptr, unsigned int idx, int n)
 		}
 		temp = temp->next;
 	}
-	if (idx == i + 1)
+	if (idx == i)
 	{
 		new_node = add_dnodeint_end(headptr, n);
 		return (new_node);
