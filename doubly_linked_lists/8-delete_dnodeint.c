@@ -21,7 +21,7 @@ int delete_dnodeint_at_index(dlistint_t **headptr, unsigned int idx)
 	if (idx == 0 && *headptr != NULL && (*headptr)->next == NULL)
 	{
 		free(*headptr), *headptr = NULL;
-	       	return (1);
+		return (1);
 	}
 	for (i = 0; temp != NULL; i++)
 	{
