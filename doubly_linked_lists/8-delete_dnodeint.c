@@ -18,6 +18,13 @@ int delete_dnodeint_at_index(dlistint_t **headptr, unsigned int idx)
 
 	if (*headptr == NULL)
 		return (-1);
+	/*if there is only one left, and the index = 0, we do not want it to be handled as the beginning or the last case*/
+	if (idx == 0 && *headptr != NULL && (*headptr)->next == NULL)
+	{
+		free(*headptr);
+		*headptr = NULL;
+		return (1);
+	}
 	for (i = 0; temp != NULL; i++)
 	{
 		if (idx == i)
@@ -27,33 +34,28 @@ int delete_dnodeint_at_index(dlistint_t **headptr, unsigned int idx)
 				/*move head to where temp points at*/
 				*headptr = temp->next;
 				(*headptr)->prev = NULL;
-				temp->next = NULL;
+				free(temp);
+				return (1);
+			}
+			/*last*/
+			else if (temp->next == NULL)
+			{
+				temp->prev->next = NULL;
 				free(temp);
 				return (1);
 			}
 			/*middle*/
 			else
 			{
+				/**/
 				/*points the ones before and after temp to each other*/
 				temp->prev->next = temp->next;
 				temp->next->prev = temp->prev;
-				/*then remove the node temp point at*/
-				temp->prev = temp->next = NULL;
 				free(temp);
 				return (1);
 			}
 		}
 		temp = temp->next;
-	}
-	/*exit the for loop if temp == NULL*/
-	/*only when temp == NULL, the code will come to the following if*/
-	/*last node*/
-	if (idx == i)
-	{
-		temp->prev->next = NULL;
-		temp->prev = NULL;
-		free(temp);
-		return (1);
 	}
 	return (-1);
 }
