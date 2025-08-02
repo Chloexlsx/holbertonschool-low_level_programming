@@ -52,11 +52,6 @@ int _strcmp(char *s0, char *s1)
  */
 void read_fail(int fail_flag, char *fname, int cerr)
 {
-	if (_strcmp(fname, "test_folder/textfile_0") == 1)
-	{
-		dprintf(cerr, "Error: Can\'t read from file %s\n", fname);
-		exit(99);
-	}
 	if (fail_flag)
 	{
 		dprintf(cerr, "Error: Can\'t read from file %s\n", fname);
