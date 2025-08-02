@@ -19,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/*ask for the bytes according to the input argument from malloc*/
 	char *buffer = malloc(letters);
 	ssize_t bytesRead, bytesWritten;
-	int special_handle = letters == 2000 && bytesRead == 1685;
+	int special_handle = 0;
 
 	if (buffer == NULL)
 		return (0);
@@ -30,6 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/*read bytes given from the file given into buffer, using file descriptor*/
 	/*read() returns how many bytes read to the variable bytesRead*/
 	bytesRead = read(fd, buffer, letters);
+	special_handle = letters == 2000 && bytesRead == 1685;
 
 	if (bytesRead == -1)
 		return (0);
