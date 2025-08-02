@@ -29,7 +29,7 @@ void write_fail(int fail_flag, char *fname)
 {
 	if (fail_flag)
 	{
-		dprintf(2, "Error: Can\'t write to file %s\n", fname);
+		dprintf(2, "Error: Can\'t write to %s\n", fname);
 		exit(99);
 	}
 }
