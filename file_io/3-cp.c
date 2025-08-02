@@ -15,7 +15,7 @@ void read_fail(int fail_flag, char *fname, int cerr)
 	if (fail_flag)
 	{
 		dprintf(cerr, "Error: Can\'t read from file %s\n", fname);
-		exit(99);
+		exit(98);
 	}
 }
 
