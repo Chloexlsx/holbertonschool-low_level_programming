@@ -15,7 +15,7 @@ void read_fail(int fail_flag, char *fname, int cerr)
 	if (fail_flag)
 	{
 		dprintf(cerr, "Error: Can\'t read from file %s\n", fname);
-		exit(98);
+		exit(99);
 	}
 }
 
@@ -98,7 +98,6 @@ int main(int argc, char *argv[])
 		bytesWritten = write(fd_to, buffer, bytesRead);
 		write_fail(bytesWritten == -1, file_to, cerr);
 		bytesRead = read(fd_from, buffer, sizeof(buffer));
-		read_fail(bytesRead == -1, file_from, cerr);
 	}
 
 	for (i = 0; i < 2; ++i)
