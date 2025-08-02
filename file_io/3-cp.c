@@ -92,9 +92,7 @@ int main(int argc, char *argv[])
 	write_fail(fd_to == -1, file_to, cerr);
 	/*start - read to buffer, then from buffer write to file_to*/
 	bytesRead = read(fd_from, buffer, sizeof(buffer));
-	dprintf(cerr, "%d\n", __LINE__);
 	read_fail(bytesRead == -1, file_from, cerr);
-	dprintf(cerr, "%d: %ld\n", __LINE__, bytesRead);
 	while (bytesRead > 0)
 	{
 		bytesWritten = write(fd_to, buffer, bytesRead);
