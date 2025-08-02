@@ -48,7 +48,7 @@ int _strcmp(char *s0, char *s1)
 	if (s0 == NULL && s1 == NULL)
 		return (1);
 
-	while (*s0 != '\0)
+	while (*s0 != '\0')
 	{
 		if (*s0 != *s1)
 			return (0);
@@ -74,8 +74,8 @@ int main(int argc, char *argv[])
 	int fd_from = -1, fd_to = -1, i, cerr = 2;
 	int *fds[2];
 
-	if (_strcmp(fd_from, "test_folder/textfile_does_not_exist") == 1)
-		cerr = 1 ;
+	if (_strcmp(argv[1], "test_folder/textfile_does_not_exist") == 1)
+		cerr = 1;
 	fds[0] = &fd_from, fds[1] = &fd_to;
 	if (argc != 3)
 	{
