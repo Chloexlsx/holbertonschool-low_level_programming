@@ -98,6 +98,7 @@ int main(int argc, char *argv[])
 		bytesWritten = write(fd_to, buffer, bytesRead);
 		write_fail(bytesWritten == -1, file_to, cerr);
 		bytesRead = read(fd_from, buffer, sizeof(buffer));
+		read_fail(bytesRead == -1, file_from, cerr);
 	}
 
 	for (i = 0; i < 2; ++i)
