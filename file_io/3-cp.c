@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	file_from = argv[1], file_to = argv[2];
-	fd_from = open(file_from, O_RDWR);
+	fd_from = open(file_from, O_RDONLY);
 	fd_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT,
 			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
