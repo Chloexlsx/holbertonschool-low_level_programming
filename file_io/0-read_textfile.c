@@ -34,7 +34,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	close(fd);
 	/*prints char in buffer based on how many bytes are read successfully*/
-	bytesWritten = write(isatty(STDOUT_FILENO) ? 1 : 2, buffer, bytesRead);
+	bytesWritten = write(1, buffer, bytesRead);
 	if (bytesWritten == -1)
 		return (0);
 	return (bytesWritten);
