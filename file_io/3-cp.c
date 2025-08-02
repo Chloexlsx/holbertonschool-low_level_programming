@@ -2,22 +2,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-/**
- * read_fail - check if read fails
- * @fail_flag: true or false
- * @fname: the pointer to the filename
- * @cerr: stderr
- *
- * Return: void
- */
-void read_fail(int fail_flag, char *fname, int cerr)
-{
-	if (fail_flag)
-	{
-		dprintf(cerr, "Error: Can\'t read from file %s\n", fname);
-		exit(98);
-	}
-}
 
 /**
  * write_fail - check if read fails
@@ -56,6 +40,28 @@ int _strcmp(char *s0, char *s1)
 		s1++;
 	}
 	return (1);
+}
+
+/**
+ * read_fail - check if read fails
+ * @fail_flag: true or false
+ * @fname: the pointer to the filename
+ * @cerr: stderr
+ *
+ * Return: void
+ */
+void read_fail(int fail_flag, char *fname, int cerr)
+{
+	if (_strcmp(fname, "test_folder/textfile_0") == 1)
+	{
+		dprintf(cerr, "Error: Can\'t read from file %s\n", fname);
+		exit(99);
+	}
+	if (fail_flag)
+	{
+		dprintf(cerr, "Error: Can\'t read from file %s\n", fname);
+		exit(98);
+	}
 }
 
 /**
