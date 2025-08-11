@@ -12,9 +12,9 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx
+	unsigned long int idx;
 	hash_node_t *node, *curr;
-	char *dup_key, *dup_value
+	char *dup_key, *dup_value;
 	const unsigned char *ukey;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
