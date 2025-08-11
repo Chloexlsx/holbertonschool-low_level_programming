@@ -12,31 +12,27 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx;
+	unsigned long int idx
 	hash_node_t *node, *curr;
-	char *dup_key, *dup_value;
+	char *dup_key, *dup_value
 	const unsigned char *ukey;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 	ukey = (const unsigned char *)key;
 	idx = key_index(ukey, ht->size);
-	/*if key already exist: same key*/
-	/*update the value*/
 	for (curr = ht->array[idx]; curr; curr = curr->next)
 	{
 		if (strcmp(curr->key, key) == 0)
 		{
 			char *new_value = strdup(value);
+
 			if (new_value == NULL)
 				return (0);
-			free(curr->value);
-			curr->value = new_value;
+			free(curr->value), curr->value = new_value;
 			return (1);
 		}
 	}
-	/*if key does not exist: collision or the bucket is empty*/
-	/*make a new node insert at the beginning*/
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
@@ -49,14 +45,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	dup_value = strdup(value);
 	if (dup_value == NULL)
 	{
-		free(node);
-		free(dup_key);
+		free(node), free(dup_key);
 		return (0);
 	}
-	node->key = dup_key;
-	node->value = dup_value;
-	/*insert at beginning of the list*/
-	node->next = ht->array[idx];
-	ht->array[idx] = node;
+	node->key = dup_key, node->value = dup_value;
+	node->next = ht->array[idx], ht->array[idx] = node;
 	return (1);
 }
